@@ -11,11 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RestControllers {
 
-	@GetMapping("/data")
+	@GetMapping("/show")
 	public Map<String, String>showData(){
 		Map<String, String> response = new HashMap<>();
 		response.put("Message", "Hello");
 		response.put("role", "User");
+		return response;
+	}
+	
+	@GetMapping("/dontshow")
+	public Map<String, String>dontshowData(){
+		Map<String, String> response = new HashMap<>();
+		response.put("Message", "Hello");
+		response.put("role", "Admin");
 		return response;
 	}
 }
